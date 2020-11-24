@@ -72,8 +72,8 @@ tambah elemen list
         32               )
         33      print('=' * 81)
 
-  - Simpan dengan nama `lab4.py` kemudian jalankan program. Maka akan menampilkan output sebagai berikut
-  ![gbr4](gambar/4.PNG)
+  - Simpan dengan nama `TugasPraktikum` kemudian jalankan program. Maka akan menampilkan output sebagai berikut :
+  ![gbr2](TugasPraktikum/Gambar/gbr2.PNG)
 
 
 ### Penjelasan
