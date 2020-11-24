@@ -1,13 +1,13 @@
-# lab-4
+# Lab 4
 ## Latihan 1
-![soal-latihan-1](assets/img/tugas-praktikum-4/latihan1/1.png)
+![Latihan](Latihan/Gambar/Latihan.PNG)
 
 **Code:**
 
-![sc-latihan-1](assets/img/tugas-praktikum-4/latihan1/2.png)
+![gbr1](Latihan/Gambar/gbr1.PNG)
 
 **Penjelasan:**
-* ``a = [1, 3, 5, 7, 9] `` list a dengan 5 elemen
+* ``a = [2, 4, 6, 8, 10] `` list a dengan 5 elemen
 
 Akses list
 * ``print(a[2])`` menampilkan elemen ke - 3
@@ -21,34 +21,89 @@ ubah elemen list
 tambah elemen list
 * ``b = a [0:2]`` mengambil 2 bagian dari list pertama (A) dan jadikan list ke 2 (B)
 * ``b.append('halo')`` menambah list B dengan nilai string
-* ``b.extend([10, 20, 30])`` menambah list B dengan 3 nilai
+* ``b.extend([20, 30, ])`` menambah list B dengan 3 nilai
 * ``x = a + b`` menggabungkan list B dengan list A
 
 **Output:**
 
-![output-latihan-1](assets/img/tugas-praktikum-4/latihan1/3.png)
+![output-latihan-1](Latihan/Gambar/gbr2.PNG)
 
 ## Tugas Praktikum 4
-![soal-praktikum-1](assets/img/tugas-praktikum-4/tugas-praktikum/1.png)
+![TugasPraktikum](TugasPraktikum/Gambar/TugasPraktikum.PNG)
 
 **Code:**
 
-![sc-praktikum-1](assets/img/tugas-praktikum-4/tugas-praktikum/2.png)
+![code](TugasPraktikum/Gambar/gbr1.PNG)
 
-**Penjelasan:**
-* ``data = []`` Membuat list kosong yang nanti akan di isi
-* ``while ulangi =='y':`` Membuat perulangan dengan variabel ``ulangi``, dimana ketika memilih 'y' maka akan otomatis mengulang pengisian data
-* ``nilai_akhir = (nilai_tugas)*30/100 + (nilai_uts)*35/100 + (nilai_uas)*35/100`` Nilai Akhir diambil dari perhitungan 3 komponen nilai (tugas: 30%, uts: 35%, uas: 35%)
-* ``data.append([nama, nim, nilai_tugas, nilai_uts, nilai_uas, int(nilai_akhir)])`` Memasukkan variabel input ke dalam list data
-* ``ulangi = (input('tambah data?(y/t)'))`` Ketika memilih 't' ``if ulangi == 't':`` maka cetaklah hasil
+### Jawab
+  - Salin kode berikut ke text editor.
+
+        1   lists = []
+        2   hitung = 1
+        3
+        4   while(True):
+        5       nama = input("Nama : ")
+        6       induk = input("NIM : ")
+        7       latihan = input("Nilai tugas : ")
+        8       exam1 = input("Nilai UTS : ")
+        9       exam2 = input("Nilai UAS : ")
+        10      akhir = (int(latihan)*30/100) + (int(exam1)*35/100) + (int(exam2)*35/100)
+        11
+        12      tampung = []
+        13      tampung.extend([hitung, nama, induk, latihan, exam1, exam2, akhir])
+        14      lists.append(tampung)
+        15
+        16      hitung += 1
+        17      tanya = input("Tambah data (y/t) : ")
+        18      if (tanya=='t'):
+        19          break
+        20
+        21      print('=' * 81)
+        22      print("| NO |          Nama          |     Nim     |  Tugas  |  UTS  |  UAS  |  Akhir  |")
+        23      print('=' * 81)
+        24      for item in lists:
+        25          print("|",'{:^2d}'.format(item[0]),"|"
+        26                ,'{:^22}'.format(item[1]),"|"
+        27                ,'{:^11}'.format(item[2]),"|"
+        28                ,'{:^7}'.format(item[3]),"|"
+        29                ,'{:^5}'.format(item[4]),"|"
+        30                ,'{:^5}'.format(item[5]),"|"
+        31                ,'{:^7.2f}'.format(float(item[6])),"|"
+        32               )
+        33      print('=' * 81)
+
+  - Simpan dengan nama `lab4.py` kemudian jalankan program. Maka akan menampilkan output sebagai berikut
+  ![gbr4](gambar/4.PNG)
+
+
+### Penjelasan
+  - Di baris **ke-1** dan **2** mendeklarasikan variabel ``lists`` yang akan menyimpan list nantinya. `hitung = 1`menyimpan variabel hitung yang bernilai 1.
+
+  - Baris **ke-4** `While(True)`sebagai perulangan, kode/ baris program yang dibawahnya akan terus berulang sampai program diberhentikan.
+
+  - Baris **ke-5** sampai **9** terdapat `input`, agar user dapat memasukan _`Nama, NIM, Nilai Tugas, UTS, dan UAS`_. Kemudian di baris **10**, variabel `akhir` akan menjumlahkan `nilai tugas, uts, dan uas` yang user masukkan lalu dibagi tiga(3).
+
+  - Baris **12** membuat list baru, variabel `tampung`.
+
+  - Baris **13** akan menambahkan _`Nama, NIM, Nilai Tugas, UTS, dan UAS`_ yang telah user masukkan tadi, ke variabel `tampung`.
+
+  - Di baris **14**, variabel `tampung` tadi, akan di-oper/ di pindahkan ke variabel `lists` yang ada di baris **1**. Nilai hitung akan bertambah 1. (baris **16**)
+
+  - Membuat variabel `tanya` (baris **17**), jika user memasukkan huruf `t`. Maka program akan berhenti / _break_ dan program akan berlanjut ke baris **Selanjutnya**. Tapi jika user memasukkan huruf `y` atau huruf selain `t`, maka program akan terus berulang dari baris **ke-5** sampai **16**.
+
+  - Tanda sama dengan yang berjumlah 81 akan di tampilkan di layar (Baris **ke-21, 23** dan **33**)
+
+  - Menampilkan ke layar `No | Nama | ...` dan seterusnya.(Baris ke**22**)
+
+  - Baris **24**, `for` akan melakukan perulangan pada variabel `lists`
+
+  - Baris **25** sampai **32** akan mencetak kelayar sesuai jumlah list yang dimasukkan pada variabel `lists` dan sesuai format yang telah ditulis. Kode `'{:^22}'` akan membuat nilai pada `format(item[1])` ruas kanan dan kiri menjadi 22 karakter. Sedangkan `2.f` akan memotong nilai `float` yang mempunyai banyak koma dibelakangnya, menjadi **2** angka di belakang koma.
 
 **Output:**
 
-![output-praktikum-1](assets/img/tugas-praktikum-4/tugas-praktikum/3.png)
+![gbr2](TugasPraktikum/Gambar/gbr2.PNG)
 
 **Flowchart:**
 
 
-<div align="center">
-  <img alt="flowchart-praktikum-1" src="assets/img/tugas-praktikum-4/tugas-praktikum/4.png" />
-</p>
+![flowchart](TugasPraktikum/Gambar/flowchart.PNG)
