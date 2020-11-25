@@ -36,7 +36,7 @@ tambah elemen list
 ![code](TugasPraktikum/Gambar/gbr1.PNG)
 
 ### Jawab
-  - Salin kode berikut ke text editor.
+  - Salin kode berikut ke pythonshell.
 
         1   lists = []
         2   hitung = 1
